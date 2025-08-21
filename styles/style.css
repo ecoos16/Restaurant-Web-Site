@@ -28,14 +28,20 @@ html{
 }
 body{
     background-color: var(--main-color);
-    height:200vh;
 }
-
-.logo img{
-    height: 7rem;
-
+section{
+    padding: 3.5rem 7%;
 }
-
+.btn{
+    margin-top:1rem;
+    display: inline-block;
+    padding: 2rem 3.75rem;
+    border-radius: 30rem;
+    font-size: 1.7rem;
+    color:#fff;
+    background-color: var(--black-color);
+    cursor: pointer;
+}
 /* header start */
 .header .logo img{
     height:10rem ;
@@ -48,7 +54,7 @@ body{
     padding: 0 7%;
     margin: 2rem 7%;
     border-radius: 30rem;
-    box-shadow: 0px 0px 17px -2px rgba(0,0.0,0.75);
+    box-shadow: 0px 0px 17px -2px rgba(0,0,0,0.75);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -57,16 +63,48 @@ body{
     margin: 0 1rem;
     font-size: 1.6rem;
     color: var(--black-color);
+    border-bottom: 0.1rem solid transparent;
 }
+.header .navbar a.active,
 .header .navbar a:hover{
-        border-bottom: 0 1rem solid transparent;
-
     border-color: var(--main-color);
     padding-bottom: 0.5rem;
+}
+.header .buttons button{
+    cursor: pointer;
+    font-size: 2.5rem;
+    margin-left: 2rem;
+    background-color: transparent;
 }
 /* header end */
 
 
+/* home start */
+.home{
+    min-height: 100vh;
+    background : url(../images/home.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-top: -14.5rem;
+    display: flex;
+    align-items: center;
+}
+.home .content{
+    max-width: 60rem;
+
+}
+.home .content h3{
+    font-size:6rem;
+    color:#fff;
+}
+.home .content p{
+    font-size :2rem;
+    font-weight: 300;
+    line-height: 1.8;
+    padding: 1rem 0;
+    color:#ccc;
+}
+ /* home end */
 
 
 
