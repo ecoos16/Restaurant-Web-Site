@@ -121,7 +121,22 @@ a{
     top: 0;
     z-index: 1000;
 }
-.header .navbar a{
+
+.header .navbar {
+  position: absolute;
+  top: 100%;
+  right: -100%;  /* ekranın dışında */
+  background: white;
+  width: 20rem;
+  border-radius: 1rem;
+  box-shadow: 0px 0px 17px -2px rgba(0,0,0,0.75);
+  transition: right 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+ .header .navbar a{
     margin: 0 1rem;
     font-size: 1.6rem;
     color: var(--black-color);
@@ -131,6 +146,7 @@ a{
 .header .navbar a:hover{
     border-color: var(--main-color);
     padding-bottom: 0.5rem;
+   
 }
 .header .buttons button{
     cursor: pointer;
@@ -603,35 +619,71 @@ a{
         padding: 2rem;
     }
     .products .box-container .box .box-head .name{
-    font-size: 3.4rem;
+        font-size: 3.4rem;
     }
 }
 @media(max-width:768px)
 {
-  #menu-btn{
+    .header #menu-btn{
+        display: inline-block;
+    }
+    .header .navbar {
+        position: absolute;
+        top: 100%;
+        right: -100%;  /* ekranın dışında */
+        background: white;
+        width: 20rem;
+        border-radius: 1rem;
+        box-shadow: 0px 0px 17px -2px rgba(0,0,0,0.75);
+        transition: right 0.3s ease-in-out;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+    }
+    .header .navbar.active{
+        right: 3rem;
+    }
+    .header .navbar a{
+        color: var(--black-color);
+        display: block;
+        margin: 1.5rem;
+        padding: 0.5rem;
+        font-size: 2rem;
+    }
+}
+@media(max-width:576px)
+{
+    html{
+        font-size:50%;
+    }
+}
+
+/* Masaüstü için navbar */
+@media(min-width:769px) {
+  .header .navbar {
+    position: static;   /* absolute yerine static */
+    display: flex;      /* yanyana görünmesi için */
+    flex-direction: row;
+    width: auto;
+    box-shadow: none;
+    background: transparent;
+    padding: 0;
+  }
+
+  .header .navbar a {
     display: inline-block;
-  }
-  .header .navbar{
-    position: absolute;
-    top:95%;
-    background-color: #fff;
-    height: calc(100vh - 9rem);
-    width: 30rem;
-    box-shadow: 0px 20px 14px 0px rgba(0,0,0,0.75) ;
-    right: -100%;
-  }
-  .header .navbar .active{
-    right: 3rem;
-  }
-  .header .navbar a{
+    margin: 0 1.5rem;
+    padding: 0;
+    font-size: 1.6rem;
     color: var(--black-color);
-    display: block;
-    margin: 1.5rem;
-    padding: 0.5rem;
-    font-size: 2rem;
+  }
+
+  /* Menü butonunu masaüstünde gizle */
+  .header #menu-btn {
+    display: none;
   }
 }
-/* responsive end */
+
 
 
 
